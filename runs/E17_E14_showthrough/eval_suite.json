@@ -1,0 +1,21 @@
+{
+ "ckpt": "runs/E17_E14_showthrough/best.pt",
+ "alpha": 0.35,
+ "beta": 0.5,
+ "val": {
+  "cer": 7.3,
+  "cer_nospace": 7.13,
+  "ser": 43.39,
+  "greedy_cer": 7.7,
+  "lines": 242
+ },
+ "ood": {
+  "bible_cer": 20.05,
+  "pages": 35,
+  "bible_cer_v2": 10.95
+ },
+ "printed": {
+  "bible_cer": 18.32,
+  "pages": 14
+ }
+}

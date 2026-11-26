@@ -1,0 +1,56 @@
+{
+ "name": "A08_bp2_g3",
+ "garbage": -3.0,
+ "line_breaks": true,
+ "full_text": true,
+ "skip_line": -9.0,
+ "blank_penalty": 2.0,
+ "after_long_hold": {
+  "n": 220,
+  "median": 0.01,
+  "mean": 7.896,
+  "within_0_25": 72.7,
+  "within_0_5": 74.5,
+  "within_1": 75.0
+ },
+ "lessons": 75,
+ "words": {
+  "n": 2857,
+  "median": 0.01,
+  "mean": 5.204,
+  "within_0_25": 85.1,
+  "within_0_5": 86.7,
+  "within_1": 88.1
+ },
+ "line_starts": {
+  "n": 640,
+  "median": 0.01,
+  "mean": 19.148,
+  "within_0_25": 81.6,
+  "within_0_5": 82.8,
+  "within_1": 83.9
+ },
+ "median_of_lesson_medians": 0.01,
+ "worst": [
+  [
+   0.56,
+   "1918_12683"
+  ],
+  [
+   4.62,
+   "1974_8020"
+  ],
+  [
+   24.02,
+   "1916_12697"
+  ],
+  [
+   26.4,
+   "1916_12682"
+  ],
+  [
+   28.78,
+   "2683_12721"
+  ]
+ ]
+}

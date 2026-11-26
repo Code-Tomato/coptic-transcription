@@ -1,0 +1,47 @@
+{
+ "name": "A05_full_g2_skipc2",
+ "garbage": -2.0,
+ "line_breaks": true,
+ "full_text": true,
+ "skip_line": -2.0,
+ "lessons": 75,
+ "words": {
+  "n": 2857,
+  "median": 0.01,
+  "mean": 171.761,
+  "within_0_25": 68.8,
+  "within_0_5": 70.2,
+  "within_1": 71.3
+ },
+ "line_starts": {
+  "n": 640,
+  "median": 0.01,
+  "mean": 174.145,
+  "within_0_25": 63.9,
+  "within_0_5": 64.5,
+  "within_1": 65.6
+ },
+ "median_of_lesson_medians": 0.01,
+ "worst": [
+  [
+   1000.0,
+   "1964_8019"
+  ],
+  [
+   1000.0,
+   "1972_12689"
+  ],
+  [
+   1000.0,
+   "2670_12719"
+  ],
+  [
+   1000.0,
+   "2679_12693"
+  ],
+  [
+   1000.0,
+   "2688_12709"
+  ]
+ ]
+}

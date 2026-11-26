@@ -1,0 +1,26 @@
+.venv/
+data/
+runs/*/checkpoints/
+*.pyc
+__pycache__/
+models/*.pt
+models/*.safetensors
+models/*.pkl
+runs/*/*.pt
+runs/*/*.pkl
+
+# liturgy: downloaded audio, crawled texts, caches and generated lessons (third-party content)
+liturgy/data/
+liturgy/cache/
+liturgy/lessons/
+liturgy/runs/*/pred.json
+liturgy/logs/
+liturgy/models/
+
+# images derived from Vatican manuscript scans (images (c) BAV), model weights and pid files stay out of git
+runs/_viz/
+runs/_seg/
+runs/**/*.png
+runs/**/*.jpg
+runs/**/*.safetensors
+runs/**/*.pid

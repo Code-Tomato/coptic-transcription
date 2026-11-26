@@ -1,0 +1,10 @@
+real 943  synth 60000  val 242  classes 44
+/home/computah/.t3/projects/coptic-transcription/scripts/train_crnn.py:318: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.step(opt); scaler.update(); sched.step()
+{"step": 1000, "loss": 0.2684, "lr": 0.0004945369001834514, "val_cer": 77.36, "val_ser": 100.0, "min": 8.9}
+{"step": 2000, "loss": 0.193, "lr": 0.0004783863644106502, "val_cer": 69.19, "val_ser": 100.0, "min": 18.5}
+{"step": 3000, "loss": 0.164, "lr": 0.0004522542485937369, "val_cer": 63.23, "val_ser": 100.0, "min": 28.2}
+{"step": 4000, "loss": 0.1388, "lr": 0.0004172826515897146, "val_cer": 71.73, "val_ser": 100.0, "min": 37.5}
+{"step": 5000, "loss": 0.1294, "lr": 0.000375, "val_cer": 70.02, "val_ser": 99.59, "min": 46.9}
+{"step": 6000, "loss": 0.1265, "lr": 0.00032725424859373687, "val_cer": 66.24, "val_ser": 100.0, "min": 56.4}
+{"step": 7000, "loss": 0.1208, "lr": 0.0002761321158169134, "val_cer": 67.51, "val_ser": 100.0, "min": 64.1}

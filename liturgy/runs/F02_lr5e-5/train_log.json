@@ -1,0 +1,320 @@
+{
+ "args": {
+  "name": "F02_lr5e-5",
+  "lr": 5e-05,
+  "steps": 1500,
+  "warmup": 100,
+  "batch_sec": 120.0,
+  "freeze_layers": 0,
+  "mask_time_prob": 0.05,
+  "eval_every": 100,
+  "seed": 0
+ },
+ "best_val_within_0_5": 95.1,
+ "log": [
+  {
+   "step": 0,
+   "val_words": {
+    "n": 246,
+    "median": 0.005,
+    "mean": 0.66,
+    "within_0_25": 91.9,
+    "within_0_5": 93.1,
+    "within_1": 93.9
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.01,
+    "mean": 0.706,
+    "within_0_25": 81.0,
+    "within_0_5": 81.0,
+    "within_1": 81.0
+   }
+  },
+  {
+   "step": 100,
+   "val_words": {
+    "n": 246,
+    "median": 0.02,
+    "mean": 0.265,
+    "within_0_25": 91.9,
+    "within_0_5": 95.1,
+    "within_1": 95.1
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.02,
+    "mean": 0.336,
+    "within_0_25": 90.5,
+    "within_0_5": 95.2,
+    "within_1": 95.2
+   }
+  },
+  {
+   "step": 200,
+   "val_words": {
+    "n": 246,
+    "median": 0.02,
+    "mean": 0.265,
+    "within_0_25": 92.7,
+    "within_0_5": 95.1,
+    "within_1": 95.5
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.02,
+    "mean": 0.337,
+    "within_0_25": 90.5,
+    "within_0_5": 95.2,
+    "within_1": 95.2
+   }
+  },
+  {
+   "step": 300,
+   "val_words": {
+    "n": 246,
+    "median": 0.02,
+    "mean": 0.276,
+    "within_0_25": 90.7,
+    "within_0_5": 94.3,
+    "within_1": 95.1
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.01,
+    "mean": 0.357,
+    "within_0_25": 85.7,
+    "within_0_5": 95.2,
+    "within_1": 95.2
+   }
+  },
+  {
+   "step": 400,
+   "val_words": {
+    "n": 246,
+    "median": 0.02,
+    "mean": 0.271,
+    "within_0_25": 91.5,
+    "within_0_5": 94.3,
+    "within_1": 95.1
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.01,
+    "mean": 0.331,
+    "within_0_25": 90.5,
+    "within_0_5": 95.2,
+    "within_1": 95.2
+   }
+  },
+  {
+   "step": 500,
+   "val_words": {
+    "n": 246,
+    "median": 0.02,
+    "mean": 0.264,
+    "within_0_25": 92.3,
+    "within_0_5": 95.1,
+    "within_1": 95.5
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.01,
+    "mean": 0.333,
+    "within_0_25": 90.5,
+    "within_0_5": 95.2,
+    "within_1": 95.2
+   }
+  },
+  {
+   "step": 600,
+   "val_words": {
+    "n": 246,
+    "median": 0.02,
+    "mean": 0.264,
+    "within_0_25": 92.3,
+    "within_0_5": 94.7,
+    "within_1": 95.9
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.02,
+    "mean": 0.343,
+    "within_0_25": 90.5,
+    "within_0_5": 95.2,
+    "within_1": 95.2
+   }
+  },
+  {
+   "step": 700,
+   "val_words": {
+    "n": 246,
+    "median": 0.02,
+    "mean": 0.266,
+    "within_0_25": 92.3,
+    "within_0_5": 94.7,
+    "within_1": 95.1
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.02,
+    "mean": 0.338,
+    "within_0_25": 90.5,
+    "within_0_5": 95.2,
+    "within_1": 95.2
+   }
+  },
+  {
+   "step": 800,
+   "val_words": {
+    "n": 246,
+    "median": 0.02,
+    "mean": 0.266,
+    "within_0_25": 91.9,
+    "within_0_5": 94.7,
+    "within_1": 95.5
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.02,
+    "mean": 0.336,
+    "within_0_25": 90.5,
+    "within_0_5": 95.2,
+    "within_1": 95.2
+   }
+  },
+  {
+   "step": 900,
+   "val_words": {
+    "n": 246,
+    "median": 0.02,
+    "mean": 0.267,
+    "within_0_25": 92.3,
+    "within_0_5": 94.3,
+    "within_1": 95.5
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.02,
+    "mean": 0.368,
+    "within_0_25": 85.7,
+    "within_0_5": 90.5,
+    "within_1": 95.2
+   }
+  },
+  {
+   "step": 1000,
+   "val_words": {
+    "n": 246,
+    "median": 0.02,
+    "mean": 0.273,
+    "within_0_25": 91.5,
+    "within_0_5": 94.3,
+    "within_1": 94.7
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.02,
+    "mean": 0.373,
+    "within_0_25": 85.7,
+    "within_0_5": 90.5,
+    "within_1": 95.2
+   }
+  },
+  {
+   "step": 1100,
+   "val_words": {
+    "n": 246,
+    "median": 0.02,
+    "mean": 0.274,
+    "within_0_25": 91.5,
+    "within_0_5": 94.3,
+    "within_1": 94.7
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.02,
+    "mean": 0.372,
+    "within_0_25": 85.7,
+    "within_0_5": 90.5,
+    "within_1": 95.2
+   }
+  },
+  {
+   "step": 1200,
+   "val_words": {
+    "n": 246,
+    "median": 0.02,
+    "mean": 0.273,
+    "within_0_25": 91.5,
+    "within_0_5": 94.3,
+    "within_1": 94.7
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.02,
+    "mean": 0.374,
+    "within_0_25": 85.7,
+    "within_0_5": 90.5,
+    "within_1": 95.2
+   }
+  },
+  {
+   "step": 1300,
+   "val_words": {
+    "n": 246,
+    "median": 0.02,
+    "mean": 0.273,
+    "within_0_25": 91.1,
+    "within_0_5": 94.3,
+    "within_1": 94.7
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.02,
+    "mean": 0.374,
+    "within_0_25": 85.7,
+    "within_0_5": 90.5,
+    "within_1": 95.2
+   }
+  },
+  {
+   "step": 1400,
+   "val_words": {
+    "n": 246,
+    "median": 0.02,
+    "mean": 0.273,
+    "within_0_25": 91.5,
+    "within_0_5": 94.3,
+    "within_1": 94.7
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.02,
+    "mean": 0.374,
+    "within_0_25": 85.7,
+    "within_0_5": 90.5,
+    "within_1": 95.2
+   }
+  },
+  {
+   "step": 1500,
+   "val_words": {
+    "n": 246,
+    "median": 0.02,
+    "mean": 0.273,
+    "within_0_25": 91.5,
+    "within_0_5": 94.3,
+    "within_1": 94.7
+   },
+   "val_after_hold": {
+    "n": 21,
+    "median": 0.03,
+    "mean": 0.377,
+    "within_0_25": 85.7,
+    "within_0_5": 90.5,
+    "within_1": 95.2
+   }
+  }
+ ]
+}

@@ -1,0 +1,25 @@
+{
+ "name": "E11_E10a_ft_printed1",
+ "train": "data/mix/E11.lst",
+ "val": "/home/computah/.t3/projects/coptic-transcription/data/scam_a/val.lst",
+ "synth": [
+  "data/synth/v1"
+ ],
+ "synth_ratio": 0.2,
+ "init": "runs/E10a_E09_ft_gold/best.pt",
+ "backbone": "resnet34",
+ "no_pretrained": false,
+ "height": 64,
+ "max_width": 1200,
+ "hidden": 256,
+ "dropout": 0.2,
+ "batch": 24,
+ "steps": 4000,
+ "lr": 0.0002,
+ "wd": 0.01,
+ "warmup": 200,
+ "augment": 1.0,
+ "eval_every": 500,
+ "workers": 6,
+ "seed": 0
+}

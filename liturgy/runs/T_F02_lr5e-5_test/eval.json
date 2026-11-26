@@ -1,0 +1,59 @@
+{
+ "name": "T_F02_lr5e-5_test",
+ "model": "liturgy/models/F02_lr5e-5",
+ "ids": "liturgy/data/ft/test_ids.txt",
+ "garbage": -1.02,
+ "line_breaks": true,
+ "full_text": true,
+ "skip_line": -9.0,
+ "blank_penalty": 1.0,
+ "hold": "vowels",
+ "after_long_hold": {
+  "n": 63,
+  "median": 0.05,
+  "mean": 15.719,
+  "within_0_25": 55.6,
+  "within_0_5": 63.5,
+  "within_1": 66.7
+ },
+ "lessons": 16,
+ "words": {
+  "n": 428,
+  "median": 0.03,
+  "mean": 20.342,
+  "within_0_25": 73.4,
+  "within_0_5": 76.2,
+  "within_1": 78.5
+ },
+ "line_starts": {
+  "n": 83,
+  "median": 0.04,
+  "mean": 30.547,
+  "within_0_25": 71.1,
+  "within_0_5": 74.7,
+  "within_1": 74.7
+ },
+ "median_of_lesson_medians": 0.033,
+ "worst": [
+  [
+   0.05,
+   "1919_12687"
+  ],
+  [
+   0.06,
+   "1974_8020"
+  ],
+  [
+   0.06,
+   "699_8041"
+  ],
+  [
+   0.12,
+   "2673_12730"
+  ],
+  [
+   0.12,
+   "2684_12718"
+  ]
+ ]
+}

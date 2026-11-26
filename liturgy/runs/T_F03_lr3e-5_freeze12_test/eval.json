@@ -1,0 +1,59 @@
+{
+ "name": "T_F03_lr3e-5_freeze12_test",
+ "model": "liturgy/models/F03_lr3e-5_freeze12",
+ "ids": "liturgy/data/ft/test_ids.txt",
+ "garbage": -1.02,
+ "line_breaks": true,
+ "full_text": true,
+ "skip_line": -9.0,
+ "blank_penalty": 1.0,
+ "hold": "vowels",
+ "after_long_hold": {
+  "n": 63,
+  "median": 0.05,
+  "mean": 10.899,
+  "within_0_25": 55.6,
+  "within_0_5": 60.3,
+  "within_1": 60.3
+ },
+ "lessons": 16,
+ "words": {
+  "n": 428,
+  "median": 0.02,
+  "mean": 19.602,
+  "within_0_25": 73.1,
+  "within_0_5": 76.2,
+  "within_1": 78.3
+ },
+ "line_starts": {
+  "n": 83,
+  "median": 0.03,
+  "mean": 30.598,
+  "within_0_25": 75.9,
+  "within_0_5": 77.1,
+  "within_1": 77.1
+ },
+ "median_of_lesson_medians": 0.018,
+ "worst": [
+  [
+   0.03,
+   "1338_12688"
+  ],
+  [
+   0.04,
+   "1974_8020"
+  ],
+  [
+   0.06,
+   "699_8041"
+  ],
+  [
+   0.07,
+   "1919_12687"
+  ],
+  [
+   0.12,
+   "2673_12730"
+  ]
+ ]
+}

@@ -1,0 +1,1 @@
+{"ckpt": "runs/E13_all_r34/best.pt", "alpha": 0.35, "beta": 0.5, "val": {"cer": 7.85, "cer_nospace": 7.78, "ser": 43.8, "greedy_cer": 8.5, "lines": 242}, "ood": {"bible_cer": 20.1, "pages": 35}, "printed": {"bible_cer": 19.05, "pages": 14}}

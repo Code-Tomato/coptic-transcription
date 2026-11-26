@@ -1,0 +1,11 @@
+greedy {"cer": 7.7398255813953485, "cer_codepoint": 7.446446786807209, "ser": 50.82644628099174, "lines": 242}
+cs_order5 0.35 0.5 {"cer": 7.23, "cer_codepoint": 7.0, "ser": 46.69, "lines": 242}
+cs_order5 0.35 1.0 {"cer": 7.34, "cer_codepoint": 7.14, "ser": 47.52, "lines": 242}
+cs_order5 0.35 1.5 {"cer": 7.38, "cer_codepoint": 7.21, "ser": 47.93, "lines": 242}
+cs_order5 0.5 0.5 {"cer": 7.27, "cer_codepoint": 7.04, "ser": 45.45, "lines": 242}
+cs_order5 0.5 1.0 {"cer": 7.27, "cer_codepoint": 7.07, "ser": 45.87, "lines": 242}
+cs_order5 0.5 1.5 {"cer": 7.45, "cer_codepoint": 7.24, "ser": 47.52, "lines": 242}
+cs_order5 0.65 0.5 {"cer": 7.63, "cer_codepoint": 7.41, "ser": 47.52, "lines": 242}
+cs_order5 0.65 1.0 {"cer": 7.78, "cer_codepoint": 7.51, "ser": 48.35, "lines": 242}
+cs_order5 0.65 1.5 {"cer": 7.92, "cer_codepoint": 7.65, "ser": 49.59, "lines": 242}
+BEST (7.2311046511627906, 'cs_order5', 0.35, 0.5, {'cer': 7.2311046511627906, 'cer_codepoint': 7.004420265215913, 'ser': 46.69421487603306, 'lines': 242})

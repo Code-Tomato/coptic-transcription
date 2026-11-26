@@ -1,0 +1,54 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Coptic Sing-Along</title><meta name="description" content="Coptic hymns with word-by-word highlighting synced to recordings, and an OCR model for Coptic manuscripts.">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Coptic&display=swap" rel="stylesheet"><style>
+:root{--bg:#f6f3ed;--panel:#fffdf9;--ink:#1f1c18;--muted:#6f685e;--line:#e4ddd0;--accent:#8a2d0c;--soft:#f6e3d6}
+@media (prefers-color-scheme:dark){:root{--bg:#15130f;--panel:#1e1b17;--ink:#ede7dc;--muted:#a59d90;--line:#363029;--accent:#f0a46d;--soft:#3a2617}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.55 system-ui,-apple-system,sans-serif}
+main{max-width:860px;margin:auto;padding:28px 16px 60px}
+h1{font-size:28px;margin:0 0 6px;line-height:1.2}h1 .cop{font-family:'Noto Sans Coptic',serif;color:var(--accent)}
+h2{font-size:20px;margin:34px 0 6px}p{margin:6px 0 12px}.muted{color:var(--muted)}
+a{color:var(--accent)}
+.cards{list-style:none;padding:0;margin:12px 0;display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.cards li{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:0;overflow:hidden}
+.cards a{display:block;text-decoration:none;color:inherit;padding:0 0 12px}
+.cards img{width:100%;aspect-ratio:16/9;object-fit:cover;display:block;background:#000}
+.cards b{display:block;padding:10px 12px 0;color:var(--accent)}.cards span{display:block;padding:2px 12px 0;font-size:13px;color:var(--muted)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin:12px 0}
+.stat{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:12px 14px}
+.stat .n{font-size:28px;font-weight:700;color:var(--accent);line-height:1.1}.stat .l{font-weight:600;font-size:14px;margin-top:4px}.stat .d{font-size:13px;color:var(--muted)}
+table{border-collapse:collapse;width:100%;margin:8px 0;font-size:15px}td,th{border-bottom:1px solid var(--line);padding:7px 6px;text-align:left}td.r{text-align:right;font-variant-numeric:tabular-nums;font-weight:600}
+.how{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:6px 16px}
+.how ol{padding-left:20px}
+footer{margin-top:40px;font-size:13px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+</style></head>
+<body><main>
+<h1>Coptic sing-along <span class="cop">ⲧⲁⲓϣⲟⲩⲣⲏ</span></h1>
+<p>Learn Coptic hymns line by line: each word lights up as it is sung, in Coptic, English letters, English and Arabic.
+Click any word to hear it, repeat a line, or slow the recording down. Timings are made automatically from a recording and its text.</p>
+
+<h2>Lessons</h2>
+<ul class="cards"><li><a href="lessons/325_T3uLWYTA48g.html"><img loading="lazy" alt="" src="https://i.ytimg.com/vi/T3uLWYTA48g/mqdefault.jpg"><b>The Hymn of the Trisagion, Ⲁ̀ⲅⲓⲟⲥ ⲟ̀ Ⲑⲉⲟⲥ</b><span>Saint Mary Church Deacons Ministry · 2:08</span></a></li><li><a href="lessons/32_3eFEgD7Jg-w.html"><img loading="lazy" alt="" src="https://i.ytimg.com/vi/3eFEgD7Jg-w/mqdefault.jpg"><b>The Orthodox Creed</b><span>Ounas Gerges · 3:00</span></a></li><li><a href="lessons/675_4YWKluIeY8c.html"><img loading="lazy" alt="" src="https://i.ytimg.com/vi/4YWKluIeY8c/mqdefault.jpg"><b>Tay-shory, Ⲧⲁⲓϣⲟⲩⲣⲏ</b><span>Bekhit Fahim 1 · 3:08</span></a></li><li><a href="lessons/675_JGq5KP4iWbg.html"><img loading="lazy" alt="" src="https://i.ytimg.com/vi/JGq5KP4iWbg/mqdefault.jpg"><b>Tay-shory, Ⲧⲁⲓϣⲟⲩⲣⲏ</b><span>George Metry · 2:56</span></a></li><li><a href="lessons/675_Q-uCaswJMP8.html"><img loading="lazy" alt="" src="https://i.ytimg.com/vi/Q-uCaswJMP8/mqdefault.jpg"><b>Tay-shory, Ⲧⲁⲓϣⲟⲩⲣⲏ</b><span>Alhan Tube · 3:19</span></a></li></ul>
+<p class="muted">Recordings play from YouTube; texts and translations are from the <a href="https://tasbeha.org/hymn_library/">tasbeha.org hymn library</a>.
+Each lesson page has a <b>Fix timings</b> mode for teachers.</p>
+
+<h2>How accurate is it?</h2>
+<p>Checked against hand-timed recordings from tasbeha.org:</p>
+<div class="stats"><div class="stat"><div class="n">93%</div><div class="l">All 75 hand-timed tasbeha recordings</div><div class="d">of words start within 0.5 s of the hand-checked time (A11 settings)</div></div><div class="stat"><div class="n">78%</div><div class="l">13 hymns held out from training</div><div class="d">same measure, on a test set chosen to include the hardest drawn-out hymns</div></div><div class="stat"><div class="n">56%</div><div class="l">Words right after a note held 8 s or longer</div><div class="d">on the held-out hymns (51% before fine-tuning on chant)</div></div></div>
+<p class="muted">Short responses and litanies are usually 95–100% right. The hard cases are long melismas, where one syllable is sung for 30–70 seconds,
+and recordings that don't match the text (a different patriarch's name, a spoken introduction).</p>
+
+<div class="how"><h2 style="margin-top:12px">How it works</h2><ol>
+<li><b>Text:</b> the hymn from tasbeha.org, where every Coptic word comes with its English-letter pronunciation (Greco-Bohairic).</li>
+<li><b>Sound:</b> Meta's MMS speech model (trained on 1,100+ languages), mixed 50/50 with a copy fine-tuned on 108 minutes of hand-timed Coptic chant, hears which letters are being sung every 20 ms.</li>
+<li><b>Alignment:</b> forced alignment places the known words in order on the recording, skipping audio that isn't in the text and lines that aren't sung, and letting a vowel be held through a melisma.</li>
+</ol></div>
+
+<h2>Also: reading Coptic manuscripts</h2>
+<p>The same project trained an OCR model for Sahidic Coptic manuscripts and print (line finder + ResNet-50/BiLSTM reader + Coptic language model),
+evaluated on the <a href="https://huggingface.co/datasets/blowing-up-groundhogs/scam">SCAM</a> benchmark (character error rate, lower is better):</p>
+<table><tr><td>SCAM-A test lines (official CER)</td><td class=r>11.5%</td></tr><tr><td>SCAM-A test lines, ignoring word spaces</td><td class=r>8.0%</td></tr><tr><td>SCAM-A test, whole pages</td><td class=r>7.0%</td></tr><tr><td>Unseen scribes (letters vs. the Sahidic Bible)</td><td class=r>11.0%</td></tr></table>
+<p class="muted">Published results on the same test lines: VAN 7.50, CRNN 13.91, TrOCR-L 14.99. Details in <a href="https://github.com/Code-Tomato/coptic-transcription/blob/main/EXPERIMENTS.md">EXPERIMENTS.md</a>.</p>
+
+<footer>Code: <a href="https://github.com/Code-Tomato/coptic-transcription">github.com/Code-Tomato/coptic-transcription</a> (MIT license). Texts © their authors, from tasbeha.org; recordings © their owners, embedded from YouTube.
+Speech model: <a href="https://huggingface.co/MahmoudAshraf/mms-300m-1130-forced-aligner">MMS-300m forced aligner</a>.</footer>
+</main></body></html>

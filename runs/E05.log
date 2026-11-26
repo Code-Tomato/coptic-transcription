@@ -1,0 +1,28 @@
+real 943  synth 60000  val 242  classes 44
+/home/computah/.t3/projects/coptic-transcription/scripts/train_crnn.py:318: UserWarning: Detected call of `lr_scheduler.step()` before `optimizer.step()`. In PyTorch 1.1.0 and later, you should call them in the opposite order: `optimizer.step()` before `lr_scheduler.step()`.  Failure to do this will result in PyTorch skipping the first value of the learning rate schedule. See more details at https://pytorch.org/docs/stable/optim.html#how-to-adjust-learning-rate
+  scaler.step(opt); scaler.update(); sched.step()
+{"step": 500, "loss": 1.3405, "lr": 0.0004978612153434526, "val_cer": 26.38, "val_ser": 92.98, "min": 1.1}
+{"step": 1000, "loss": 0.4366, "lr": 0.0004914814565722671, "val_cer": 14.06, "val_ser": 69.83, "min": 2.7}
+{"step": 1500, "loss": 0.3452, "lr": 0.0004809698831278217, "val_cer": 12.32, "val_ser": 66.12, "min": 4.4}
+{"step": 2000, "loss": 0.2683, "lr": 0.00046650635094610973, "val_cer": 10.94, "val_ser": 61.57, "min": 7.1}
+{"step": 2500, "loss": 0.2346, "lr": 0.0004483383350728088, "val_cer": 10.32, "val_ser": 57.85, "min": 9.4}
+{"step": 3000, "loss": 0.2004, "lr": 0.00042677669529663686, "val_cer": 9.96, "val_ser": 57.44, "min": 12.5}
+{"step": 3500, "loss": 0.1985, "lr": 0.0004021903572521802, "val_cer": 10.21, "val_ser": 56.61, "min": 16.0}
+{"step": 4000, "loss": 0.1556, "lr": 0.000375, "val_cer": 8.79, "val_ser": 52.48, "min": 19.1}
+{"step": 4500, "loss": 0.1533, "lr": 0.0003456708580912725, "val_cer": 9.99, "val_ser": 58.26, "min": 22.9}
+{"step": 5000, "loss": 0.1406, "lr": 0.00031470476127563017, "val_cer": 9.01, "val_ser": 54.13, "min": 26.6}
+{"step": 5500, "loss": 0.1195, "lr": 0.000282631548055013, "val_cer": 9.08, "val_ser": 55.37, "min": 30.3}
+{"step": 6000, "loss": 0.1199, "lr": 0.00025, "val_cer": 8.87, "val_ser": 54.55, "min": 33.9}
+{"step": 6500, "loss": 0.114, "lr": 0.00021736845194498717, "val_cer": 9.08, "val_ser": 55.79, "min": 37.7}
+{"step": 7000, "loss": 0.0955, "lr": 0.0001852952387243698, "val_cer": 9.59, "val_ser": 56.2, "min": 41.3}
+{"step": 7500, "loss": 0.0846, "lr": 0.00015432914190872756, "val_cer": 8.87, "val_ser": 52.89, "min": 45.0}
+{"step": 8000, "loss": 0.0805, "lr": 0.00012500000000000006, "val_cer": 8.43, "val_ser": 50.41, "min": 48.7}
+{"step": 8500, "loss": 0.0843, "lr": 9.780964274781984e-05, "val_cer": 8.61, "val_ser": 54.55, "min": 52.3}
+{"step": 9000, "loss": 0.0708, "lr": 7.322330470336314e-05, "val_cer": 9.08, "val_ser": 55.37, "min": 56.0}
+{"step": 9500, "loss": 0.0638, "lr": 5.1661664927191235e-05, "val_cer": 8.65, "val_ser": 53.31, "min": 59.6}
+{"step": 10000, "loss": 0.0665, "lr": 3.3493649053890325e-05, "val_cer": 8.76, "val_ser": 54.13, "min": 63.3}
+{"step": 10500, "loss": 0.0623, "lr": 1.9030116872178316e-05, "val_cer": 8.47, "val_ser": 52.07, "min": 67.0}
+{"step": 11000, "loss": 0.0549, "lr": 8.51854342773295e-06, "val_cer": 8.43, "val_ser": 50.41, "min": 70.6}
+{"step": 11500, "loss": 0.0623, "lr": 2.1387846565474044e-06, "val_cer": 8.36, "val_ser": 50.83, "min": 74.3}
+{"step": 12000, "loss": 0.058, "lr": 0.0, "val_cer": 8.39, "val_ser": 51.65, "min": 78.0}
+BEST {"cer": 8.357558139534884, "cer_codepoint": 7.990479428765726, "ser": 50.82644628099174, "lines": 242, "best_step": 11500}

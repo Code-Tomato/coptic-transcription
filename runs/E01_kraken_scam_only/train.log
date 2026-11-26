@@ -1,0 +1,710 @@
+GPU available: True (cuda), used: True
+TPU available: False, using: 0 TPU cores
+💡 Tip: For seamless cloud logging and experiment tracking, try installing [litlogger](https://pypi.org/project/litlogger/) to enable LitLogger, which logs metrics and artifacts automatically to the Lightning Experiments platform.
+`Trainer(val_check_interval=1.0)` was configured so validation will run at the end of the training epoch..
+Initializing new model.
+You are using a CUDA device ('NVIDIA GeForce RTX 3050 Ti Laptop GPU') that has Tensor Cores. To properly utilize them, you should set `torch.set_float32_matmul_precision('medium' | 'high')` which will trade-off precision for performance. For more details, read https://pytorch.org/docs/stable/generated/torch.set_float32_matmul_precision.html#torch.set_float32_matmul_precision
+[11/21/26 07:38:38] WARNING  alphabet mismatch: chars in training    vgsl.py:220
+                             set only: {'ⳁ', 'ⲋ', '̄'} (not included             
+                             in accuracy test during training)                  
+LOCAL_RANK: 0 - CUDA_VISIBLE_DEVICES: [0]
+┏━━━┳━━━━━━━━━━━━━━━━━┳━━━━━━━━━━┳━━━━━━━━┳━━━━━━━┳━━━━━━━┳━━━━━━━━━━┳━━━━━━━━━┓
+┃   ┃                 ┃          ┃        ┃       ┃       ┃          ┃     Out ┃
+┃   ┃ Name            ┃ Type     ┃ Params ┃ Mode  ┃ FLOPs ┃ In sizes ┃   sizes ┃
+┡━━━╇━━━━━━━━━━━━━━━━━╇━━━━━━━━━━╇━━━━━━━━╇━━━━━━━╇━━━━━━━╇━━━━━━━━━━╇━━━━━━━━━┩
+│ 0 │ val_cer         │ CharErr… │      0 │ train │     0 │        ? │       ? │
+│ 1 │ val_wer         │ WordErr… │      0 │ train │     0 │        ? │       ? │
+│ 2 │ net             │ TorchVG… │  4.0 M │ train │ 1.6 B │  [[1, 1, │    [[1, │
+│   │                 │          │        │       │       │     120, │  40, 1, │
+│   │                 │          │        │       │       │    400], │    50], │
+│   │                 │          │        │       │       │     '?'] │    '?'] │
+│ 3 │ net.nn          │ MultiPa… │  4.0 M │ train │ 1.6 B │  [[1, 1, │    [[1, │
+│   │                 │          │        │       │       │     120, │  40, 1, │
+│   │                 │          │        │       │       │    400], │    50], │
+│   │                 │          │        │       │       │     '?'] │    '?'] │
+│ 4 │ net._aux_layers │ ModuleD… │      0 │ train │     0 │        ? │       ? │
+│ 5 │ net.criterion   │ CTCLoss  │      0 │ train │     0 │        ? │       ? │
+└───┴─────────────────┴──────────┴────────┴───────┴───────┴──────────┴─────────┘
+Trainable params: 4.0 M                                                         
+Non-trainable params: 0                                                         
+Total params: 4.0 M                                                             
+Total estimated model params size (MB): 16.036                                  
+Modules in train mode: 43                                                       
+Modules in eval mode: 0                                                         
+Total FLOPs: 1.6 B                                                              
+stage 0/∞ ━━━━━━━━━━━━━ 59/59 0:00:10 •     6.00it/s train_loss_s… early_stoppi…
+                              0:00:00                562.371       0/30 0.00000 
+                                                     val_accuracy:              
+                                                     0.000                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     694.738                    
+stage 1/∞ ━━━━━━━━━━━━━ 59/59 0:00:11 •     5.49it/s train_loss_s… early_stoppi…
+                              0:00:00                572.296       1/30 0.00000 
+                                                     val_accuracy:              
+                                                     0.000                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     648.207                    
+stage 2/∞ ━━━━━━━━━━━━━ 59/59 0:00:11 •     5.53it/s train_loss_s… early_stoppi…
+                              0:00:00                603.584       2/30 0.00000 
+                                                     val_accuracy:              
+                                                     0.000                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     645.659                    
+stage 3/∞ ━━━━━━━━━━━━━ 59/59 0:00:11 •     5.77it/s train_loss_s… early_stoppi…
+                              0:00:00                577.288       3/30 0.00000 
+                                                     val_accuracy:              
+                                                     0.000                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     643.874                    
+stage 4/∞ ━━━━━━━━━━━━━ 59/59 0:00:11 •     5.44it/s train_loss_s… early_stoppi…
+                              0:00:00                610.307       4/30 0.00000 
+                                                     val_accuracy:              
+                                                     0.000                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     641.261                    
+stage 5/∞ ━━━━━━━━━━━━━ 59/59 0:00:12 •     5.34it/s train_loss_s… early_stoppi…
+                              0:00:00                598.903       0/30 0.06052 
+                                                     val_accuracy:              
+                                                     0.061                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     640.571                    
+stage 6/∞ ━━━━━━━━━━━━━ 59/59 0:00:12 •     4.99it/s train_loss_s… early_stoppi…
+                              0:00:00                626.943       1/30 0.06052 
+                                                     val_accuracy:              
+                                                     0.061                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     638.797                    
+stage 7/∞ ━━━━━━━━━━━━━ 59/59 0:00:16 •     3.84it/s train_loss_s… early_stoppi…
+                              0:00:00                701.884       2/30 0.06052 
+                                                     val_accuracy:              
+                                                     0.061                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     636.538                    
+stage 8/∞ ━━━━━━━━━━━━━ 59/59 0:00:16 •     3.75it/s train_loss_s… early_stoppi…
+                              0:00:00                591.557       3/30 0.06052 
+                                                     val_accuracy:              
+                                                     0.061                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     635.900                    
+stage 9/∞ ━━━━━━━━━━━━━ 59/59 0:00:18 •     3.48it/s train_loss_s… early_stoppi…
+                              0:00:00                606.635       0/30 0.10371 
+                                                     val_accuracy:              
+                                                     0.104                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     635.407                    
+stage 10/∞ ━━━━━━━━━━━━━ 59/59 0:00:17 •    3.68it/s train_loss_s… early_stoppi…
+                               0:00:00               681.919       0/30 0.11799 
+                                                     val_accuracy:              
+                                                     0.118                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     634.739                    
+stage 11/∞ ━━━━━━━━━━━━━ 59/59 0:00:18 •    3.62it/s train_loss_s… early_stoppi…
+                               0:00:00               549.843       1/30 0.11799 
+                                                     val_accuracy:              
+                                                     0.101                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     634.455                    
+stage 12/∞ ━━━━━━━━━━━━━ 59/59 0:00:18 •    3.90it/s train_loss_s… early_stoppi…
+                               0:00:00               650.075       2/30 0.11799 
+                                                     val_accuracy:              
+                                                     0.104                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     633.810                    
+stage 13/∞ ━━━━━━━━━━━━━ 59/59 0:00:18 •    3.48it/s train_loss_s… early_stoppi…
+                               0:00:00               584.488       3/30 0.11799 
+                                                     val_accuracy:              
+                                                     0.104                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     633.510                    
+stage 14/∞ ━━━━━━━━━━━━━ 59/59 0:00:19 •    3.19it/s train_loss_s… early_stoppi…
+                               0:00:00               632.416       4/30 0.11799 
+                                                     val_accuracy:              
+                                                     0.104                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     632.728                    
+stage 15/∞ ━━━━━━━━━━━━━ 59/59 0:00:19 •    3.34it/s train_loss_s… early_stoppi…
+                               0:00:00               540.732       5/30 0.11799 
+                                                     val_accuracy:              
+                                                     0.104                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     632.779                    
+stage 16/∞ ━━━━━━━━━━━━━ 59/59 0:00:17 •    3.96it/s train_loss_s… early_stoppi…
+                               0:00:00               574.589       6/30 0.11799 
+                                                     val_accuracy:              
+                                                     0.104                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     631.899                    
+stage 17/∞ ━━━━━━━━━━━━━ 59/59 0:00:19 •    3.25it/s train_loss_s… early_stoppi…
+                               0:00:00               630.637       0/30 0.12241 
+                                                     val_accuracy:              
+                                                     0.122                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     631.691                    
+stage 18/∞ ━━━━━━━━━━━━━ 59/59 0:00:19 •    3.29it/s train_loss_s… early_stoppi…
+                               0:00:00               558.854       1/30 0.12241 
+                                                     val_accuracy:              
+                                                     0.122                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     631.980                    
+stage 19/∞ ━━━━━━━━━━━━━ 59/59 0:00:16 •    3.83it/s train_loss_s… early_stoppi…
+                               0:00:00               567.946       2/30 0.12241 
+                                                     val_accuracy:              
+                                                     0.101                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     630.959                    
+stage 20/∞ ━━━━━━━━━━━━━ 59/59 0:00:19 •    3.28it/s train_loss_s… early_stoppi…
+                               0:00:00               616.550       3/30 0.12241 
+                                                     val_accuracy:              
+                                                     0.052                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     630.673                    
+stage 21/∞ ━━━━━━━━━━━━━ 59/59 0:00:44 •    1.60it/s train_loss_s… early_stoppi…
+                               0:00:00               569.991       4/30 0.12241 
+                                                     val_accuracy:              
+                                                     0.052                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     630.384                    
+stage 22/∞ ━━━━━━━━━━━━━ 59/59 0:00:19 •    3.35it/s train_loss_s… early_stoppi…
+                               0:00:00               579.567       5/30 0.12241 
+                                                     val_accuracy:              
+                                                     0.052                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     630.574                    
+stage 23/∞ ━━━━━━━━━━━━━ 59/59 0:00:42 •    1.84it/s train_loss_s… early_stoppi…
+                               0:00:00               600.286       6/30 0.12241 
+                                                     val_accuracy:              
+                                                     0.052                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     629.413                    
+stage 24/∞ ━━━━━━━━━━━━━ 59/59 0:00:20 •    3.14it/s train_loss_s… early_stoppi…
+                               0:00:00               545.808       7/30 0.12241 
+                                                     val_accuracy:              
+                                                     0.051                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     628.849                    
+stage 25/∞ ━━━━━━━━━━━━━ 59/59 0:00:42 •    1.95it/s train_loss_s… early_stoppi…
+                               0:00:00               581.509       8/30 0.12241 
+                                                     val_accuracy:              
+                                                     0.097                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     626.625                    
+stage 26/∞ ━━━━━━━━━━━━━ 59/59 0:00:18 •    3.46it/s train_loss_s… early_stoppi…
+                               0:00:00               637.691       9/30 0.12241 
+                                                     val_accuracy:              
+                                                     0.081                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     622.945                    
+stage 27/∞ ━━━━━━━━━━━━━ 59/59 0:00:35 •    3.99it/s train_loss_s… early_stoppi…
+                               0:00:00               633.153       10/30 0.12241
+                                                     val_accuracy:              
+                                                     0.081                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     622.176                    
+stage 28/∞ ━━━━━━━━━━━━━ 59/59 0:00:14 •    4.40it/s train_loss_s… early_stoppi…
+                               0:00:00               552.851       11/30 0.12241
+                                                     val_accuracy:              
+                                                     0.091                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     621.401                    
+stage 29/∞ ━━━━━━━━━━━━━ 59/59 0:00:41 •    2.81it/s train_loss_s… early_stoppi…
+                               0:00:00               558.363       12/30 0.12241
+                                                     val_accuracy:              
+                                                     0.091                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     617.971                    
+stage 30/∞ ━━━━━━━━━━━━━ 59/59 0:00:13 •    4.66it/s train_loss_s… early_stoppi…
+                               0:00:00               599.166       13/30 0.12241
+                                                     val_accuracy:              
+                                                     0.081                      
+                                                     val_word_acc…              
+                                                     0.000                      
+                                                     train_loss_e…              
+                                                     617.169                    
+[rank: 0] Received SIGTERM: 15
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/torch/utils/data/dataloader.py:1293 in _try_get_data                 │
+│                                                                              │
+│   1290 │   │   # Returns a 2-tuple:                                          │
+│   1291 │   │   #   (bool: whether successfully get data, any: data if succes │
+│   1292 │   │   try:                                                          │
+│ ❱ 1293 │   │   │   data = self._data_queue.get(timeout=timeout)              │
+│   1294 │   │   │   return (True, data)                                       │
+│   1295 │   │   except Exception as e:                                        │
+│   1296 │   │   │   # At timeout and error, we manually check whether any wor │
+│                                                                              │
+│ /home/computah/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/p │
+│ ython3.12/queue.py:180 in get                                                │
+│                                                                              │
+│   177 │   │   │   │   │   remaining = endtime - time()                       │
+│   178 │   │   │   │   │   if remaining <= 0.0:                               │
+│   179 │   │   │   │   │   │   raise Empty                                    │
+│ ❱ 180 │   │   │   │   │   self.not_empty.wait(remaining)                     │
+│   181 │   │   │   item = self._get()                                         │
+│   182 │   │   │   self.not_full.notify()                                     │
+│   183 │   │   │   return item                                                │
+│                                                                              │
+│ /home/computah/.local/share/uv/python/cpython-3.12.16-linux-x86_64-gnu/lib/p │
+│ ython3.12/threading.py:359 in wait                                           │
+│                                                                              │
+│    356 │   │   │   │   gotit = True                                          │
+│    357 │   │   │   else:                                                     │
+│    358 │   │   │   │   if timeout > 0:                                       │
+│ ❱  359 │   │   │   │   │   gotit = waiter.acquire(True, timeout)             │
+│    360 │   │   │   │   else:                                                 │
+│    361 │   │   │   │   │   gotit = waiter.acquire(False)                     │
+│    362 │   │   │   return gotit                                              │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/torch/utils/data/_utils/signal_handling.py:73 in handler             │
+│                                                                              │
+│   70 │   def handler(signum, frame) -> None:                                 │
+│   71 │   │   # This following call uses `waitid` with WNOHANG from C side. T │
+│   72 │   │   # Python can still get and update the process status successful │
+│ ❱ 73 │   │   _error_if_any_worker_fails()                                    │
+│   74 │   │   if previous_handler is not None:                                │
+│   75 │   │   │   if not callable(previous_handler):                          │
+│   76 │   │   │   │   raise AssertionError("previous_handler is not callable" │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RuntimeError: DataLoader worker (pid 386975) is killed by signal: Terminated. 
+
+The above exception was the direct cause of the following exception:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/trainer/call.py:49 in _call_and_handle_interrupt   │
+│                                                                              │
+│    46 │   try:                                                               │
+│    47 │   │   if trainer.strategy.launcher is not None:                      │
+│    48 │   │   │   return trainer.strategy.launcher.launch(trainer_fn, *args, │
+│ ❱  49 │   │   return trainer_fn(*args, **kwargs)                             │
+│    50 │                                                                      │
+│    51 │   except _TunerExitException:                                        │
+│    52 │   │   _call_teardown_hook(trainer)                                   │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/trainer/trainer.py:630 in _fit_impl                │
+│                                                                              │
+│    627 │   │   │   model_provided=True,                                      │
+│    628 │   │   │   model_connected=self.lightning_module is not None,        │
+│    629 │   │   )                                                             │
+│ ❱  630 │   │   self._run(model, ckpt_path=ckpt_path, weights_only=weights_on │
+│    631 │   │                                                                 │
+│    632 │   │   assert self.state.stopped                                     │
+│    633 │   │   self.training = False                                         │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/trainer/trainer.py:1079 in _run                    │
+│                                                                              │
+│   1076 │   │   # ----------------------------                                │
+│   1077 │   │   # RUN THE TRAINER                                             │
+│   1078 │   │   # ----------------------------                                │
+│ ❱ 1079 │   │   results = self._run_stage()                                   │
+│   1080 │   │                                                                 │
+│   1081 │   │   # ----------------------------                                │
+│   1082 │   │   # POST-Training CLEAN UP                                      │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/trainer/trainer.py:1123 in _run_stage              │
+│                                                                              │
+│   1120 │   │   │   with isolate_rng():                                       │
+│   1121 │   │   │   │   self._run_sanity_check()                              │
+│   1122 │   │   │   with torch.autograd.set_detect_anomaly(self._detect_anoma │
+│ ❱ 1123 │   │   │   │   self.fit_loop.run()                                   │
+│   1124 │   │   │   return None                                               │
+│   1125 │   │   raise RuntimeError(f"Unexpected state {self.state}")          │
+│   1126                                                                       │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/loops/fit_loop.py:217 in run                       │
+│                                                                              │
+│   214 │   │   while not self.done:                                           │
+│   215 │   │   │   try:                                                       │
+│   216 │   │   │   │   self.on_advance_start()                                │
+│ ❱ 217 │   │   │   │   self.advance()                                         │
+│   218 │   │   │   │   self.on_advance_end()                                  │
+│   219 │   │   │   except StopIteration:                                      │
+│   220 │   │   │   │   break                                                  │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/loops/fit_loop.py:469 in advance                   │
+│                                                                              │
+│   466 │   │   │   )                                                          │
+│   467 │   │   with self.trainer.profiler.profile("run_training_epoch"):      │
+│   468 │   │   │   assert self._data_fetcher is not None                      │
+│ ❱ 469 │   │   │   self.epoch_loop.run(self._data_fetcher)                    │
+│   470 │                                                                      │
+│   471 │   def on_advance_end(self) -> None:                                  │
+│   472 │   │   trainer = self.trainer                                         │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/loops/training_epoch_loop.py:153 in run            │
+│                                                                              │
+│   150 │   │   self.on_run_start(data_fetcher)                                │
+│   151 │   │   while not self.done:                                           │
+│   152 │   │   │   try:                                                       │
+│ ❱ 153 │   │   │   │   self.advance(data_fetcher)                             │
+│   154 │   │   │   │   self.on_advance_end(data_fetcher)                      │
+│   155 │   │   │   except StopIteration:                                      │
+│   156 │   │   │   │   break                                                  │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/loops/training_epoch_loop.py:311 in advance        │
+│                                                                              │
+│   308 │   │   │   batch_idx = data_fetcher._batch_idx                        │
+│   309 │   │   else:                                                          │
+│   310 │   │   │   dataloader_iter = None                                     │
+│ ❱ 311 │   │   │   batch, _, __ = next(data_fetcher)                          │
+│   312 │   │   │   # TODO: we should instead use the batch_idx returned by th │
+│   313 │   │   │   # fetcher state so that the batch_idx is correct after res │
+│   314 │   │   │   batch_idx = self.batch_idx + 1                             │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/loops/fetchers.py:134 in __next__                  │
+│                                                                              │
+│   131 │   │   │   │   self.done = not self.batches                           │
+│   132 │   │   elif not self.done:                                            │
+│   133 │   │   │   # this will run only when no pre-fetching was done.        │
+│ ❱ 134 │   │   │   batch = super().__next__()                                 │
+│   135 │   │   else:                                                          │
+│   136 │   │   │   # the iterator is empty                                    │
+│   137 │   │   │   raise StopIteration                                        │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/loops/fetchers.py:61 in __next__                   │
+│                                                                              │
+│    58 │   │   assert self.iterator is not None                               │
+│    59 │   │   self._start_profiler()                                         │
+│    60 │   │   try:                                                           │
+│ ❱  61 │   │   │   batch = next(self.iterator)                                │
+│    62 │   │   except StopIteration:                                          │
+│    63 │   │   │   self.done = True                                           │
+│    64 │   │   │   raise                                                      │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/utilities/combined_loader.py:341 in __next__       │
+│                                                                              │
+│   338 │                                                                      │
+│   339 │   def __next__(self) -> _ITERATOR_RETURN:                            │
+│   340 │   │   assert self._iterator is not None                              │
+│ ❱ 341 │   │   out = next(self._iterator)                                     │
+│   342 │   │   if isinstance(self._iterator, _Sequential):                    │
+│   343 │   │   │   return out                                                 │
+│   344 │   │   out, batch_idx, dataloader_idx = out                           │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/utilities/combined_loader.py:78 in __next__        │
+│                                                                              │
+│    75 │   │   out = [None] * n  # values per iterator                        │
+│    76 │   │   for i in range(n):                                             │
+│    77 │   │   │   try:                                                       │
+│ ❱  78 │   │   │   │   out[i] = next(self.iterators[i])                       │
+│    79 │   │   │   except StopIteration:                                      │
+│    80 │   │   │   │   self._consumed[i] = True                               │
+│    81 │   │   │   │   if all(self._consumed):                                │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/torch/utils/data/dataloader.py:725 in __next__                       │
+│                                                                              │
+│    722 │   │   │   if self._sampler_iter is None:                            │
+│    723 │   │   │   │   # TODO(https://github.com/pytorch/pytorch/issues/7675 │
+│    724 │   │   │   │   self._reset()  # type: ignore[call-arg]               │
+│ ❱  725 │   │   │   data = self._next_data()                                  │
+│    726 │   │   │   self._num_yielded += 1                                    │
+│    727 │   │   │   if (                                                      │
+│    728 │   │   │   │   self._dataset_kind == _DatasetKind.Iterable           │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/torch/utils/data/dataloader.py:1507 in _next_data                    │
+│                                                                              │
+│   1504 │   │   │   │   raise AssertionError(                                 │
+│   1505 │   │   │   │   │   "Invalid iterator state: shutdown or no outstandi │
+│   1506 │   │   │   │   )                                                     │
+│ ❱ 1507 │   │   │   idx, data = self._get_data()                              │
+│   1508 │   │   │   self._tasks_outstanding -= 1                              │
+│   1509 │   │   │   if self._dataset_kind == _DatasetKind.Iterable:           │
+│   1510 │   │   │   │   # Check for _IterableDatasetStopIteration             │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/torch/utils/data/dataloader.py:1456 in _get_data                     │
+│                                                                              │
+│   1453 │   │   │   │   )                                                     │
+│   1454 │   │   elif self._pin_memory:                                        │
+│   1455 │   │   │   while self._pin_memory_thread.is_alive():                 │
+│ ❱ 1456 │   │   │   │   success, data = self._try_get_data()                  │
+│   1457 │   │   │   │   if success:                                           │
+│   1458 │   │   │   │   │   return data                                       │
+│   1459 │   │   │   else:                                                     │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/torch/utils/data/dataloader.py:1306 in _try_get_data                 │
+│                                                                              │
+│   1303 │   │   │   │   │   self._mark_worker_as_unavailable(worker_id)       │
+│   1304 │   │   │   if len(failed_workers) > 0:                               │
+│   1305 │   │   │   │   pids_str = ", ".join(str(w.pid) for w in failed_worke │
+│ ❱ 1306 │   │   │   │   raise RuntimeError(                                   │
+│   1307 │   │   │   │   │   f"DataLoader worker (pid(s) {pids_str}) exited un │
+│   1308 │   │   │   │   ) from e                                              │
+│   1309 │   │   │   if isinstance(e, queue.Empty):                            │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RuntimeError: DataLoader worker (pid(s) 386975) exited unexpectedly
+
+During handling of the above exception, another exception occurred:
+
+╭───────────────────── Traceback (most recent call last) ──────────────────────╮
+│ /home/computah/.t3/projects/coptic-transcription/runs/E01_kraken_scam_only/. │
+│ ./../.venv/bin/ketos:10 in <module>                                          │
+│                                                                              │
+│    7 │   │   sys.argv[0] = sys.argv[0][:-11]                                 │
+│    8 │   elif sys.argv[0].endswith(".exe"):                                  │
+│    9 │   │   sys.argv[0] = sys.argv[0][:-4]                                  │
+│ ❱ 10 │   sys.exit(cli())                                                     │
+│   11                                                                         │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/click/core.py:1442 in __call__                                       │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/click/core.py:1363 in main                                           │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/click/core.py:1830 in invoke                                         │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/click/core.py:1226 in invoke                                         │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/click/core.py:794 in invoke                                          │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/click/decorators.py:34 in new_func                                   │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/kraken/ketos/recognition.py:309 in train                             │
+│                                                                              │
+│   306 │   │   │   if resume:                                                 │
+│   307 │   │   │   │   trainer.fit(model, data_module, ckpt_path=resume)      │
+│   308 │   │   │   else:                                                      │
+│ ❱ 309 │   │   │   │   trainer.fit(model, data_module)                        │
+│   310 │   except ValueError as e:                                            │
+│   311 │   │   if e.args[0].startswith('Training data and model codec alphabe │
+│   312 │   │   │   raise click.BadOptionUsage('resize', 'Mismatched training  │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/kraken/train/utils.py:171 in fit                                     │
+│                                                                              │
+│   168 │   │   with warnings.catch_warnings():                                │
+│   169 │   │   │   warnings.filterwarnings(action='ignore', category=UserWarn │
+│   170 │   │   │   │   │   │   │   │   │   message='The dataloader,')         │
+│ ❱ 171 │   │   │   super().fit(*args, **kwargs)                               │
+│   172                                                                        │
+│   173                                                                        │
+│   174 class KrakenOnExceptionCheckpoint(Callback):                           │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/trainer/trainer.py:584 in fit                      │
+│                                                                              │
+│    581 │   │   self.state.status = TrainerStatus.RUNNING                     │
+│    582 │   │   self.training = True                                          │
+│    583 │   │   self.should_stop = False                                      │
+│ ❱  584 │   │   call._call_and_handle_interrupt(                              │
+│    585 │   │   │   self,                                                     │
+│    586 │   │   │   self._fit_impl,                                           │
+│    587 │   │   │   model,                                                    │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/trainer/call.py:69 in _call_and_handle_interrupt   │
+│                                                                              │
+│    66 │   │   sys.exit(1)                                                    │
+│    67 │                                                                      │
+│    68 │   except BaseException as exception:                                 │
+│ ❱  69 │   │   _interrupt(trainer, exception)                                 │
+│    70 │   │   trainer._teardown()                                            │
+│    71 │   │   # teardown might access the stage so we reset it after         │
+│    72 │   │   trainer.state.stage = None                                     │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/trainer/call.py:78 in _interrupt                   │
+│                                                                              │
+│    75                                                                        │
+│    76 def _interrupt(trainer: "pl.Trainer", exception: BaseException) -> Non │
+│    77 │   trainer.state.status = TrainerStatus.INTERRUPTED                   │
+│ ❱  78 │   _call_callback_hooks(trainer, "on_exception", exception)           │
+│    79 │   if trainer.datamodule is not None:                                 │
+│    80 │   │   _call_lightning_datamodule_hook(trainer, "on_exception", excep │
+│    81 │   trainer.strategy.on_exception(exception)                           │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/trainer/call.py:228 in _call_callback_hooks        │
+│                                                                              │
+│   225 │   │   fn = getattr(callback, hook_name)                              │
+│   226 │   │   if callable(fn):                                               │
+│   227 │   │   │   with trainer.profiler.profile(f"[Callback]{callback.state_ │
+│ ❱ 228 │   │   │   │   fn(trainer, trainer.lightning_module, *args, **kwargs) │
+│   229 │                                                                      │
+│   230 │   if pl_module:                                                      │
+│   231 │   │   # restore current_fx when nested context                       │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/kraken/train/utils.py:195 in on_exception                            │
+│                                                                              │
+│   192 │   │   return path.join(self.dirpath, self.filename + self.FILE_EXTEN │
+│   193 │                                                                      │
+│   194 │   def on_exception(self, trainer: "L.Trainer", *_args, **_kwargs) -> │
+│ ❱ 195 │   │   trainer.save_checkpoint(self.ckpt_path)                        │
+│   196                                                                        │
+│   197                                                                        │
+│   198 class KrakenFreezeBackbone(BaseFinetuning):                            │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/trainer/trainer.py:1463 in save_checkpoint         │
+│                                                                              │
+│   1460 │   │   │   │   " `Trainer.save_checkpoint()` before calling `Trainer │
+│   1461 │   │   │   )                                                         │
+│   1462 │   │   with self.profiler.profile("save_checkpoint"):                │
+│ ❱ 1463 │   │   │   checkpoint = self._checkpoint_connector.dump_checkpoint(w │
+│   1464 │   │   │   self.strategy.save_checkpoint(checkpoint, filepath, stora │
+│   1465 │   │   │   self.strategy.barrier("Trainer.save_checkpoint")          │
+│   1466                                                                       │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/trainer/connectors/checkpoint_connector.py:449 in  │
+│ dump_checkpoint                                                              │
+│                                                                              │
+│   446 │   │   │   "epoch": trainer.current_epoch,                            │
+│   447 │   │   │   "global_step": trainer.global_step,                        │
+│   448 │   │   │   "pytorch-lightning_version": pl.__version__,               │
+│ ❱ 449 │   │   │   "state_dict": self._get_lightning_module_state_dict(),     │
+│   450 │   │   │   "loops": self._get_loops_state_dict(),                     │
+│   451 │   │   }                                                              │
+│   452                                                                        │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/trainer/connectors/checkpoint_connector.py:514 in  │
+│ _get_lightning_module_state_dict                                             │
+│                                                                              │
+│   511 │   │   return checkpoint                                              │
+│   512 │                                                                      │
+│   513 │   def _get_lightning_module_state_dict(self) -> dict[str, Tensor]:   │
+│ ❱ 514 │   │   return self.trainer.strategy.lightning_module_state_dict()     │
+│   515 │                                                                      │
+│   516 │   def _get_loops_state_dict(self) -> dict[str, Any]:                 │
+│   517 │   │   return {                                                       │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/lightning/pytorch/strategies/strategy.py:477 in                      │
+│ lightning_module_state_dict                                                  │
+│                                                                              │
+│   474 │   def lightning_module_state_dict(self) -> dict[str, Any]:           │
+│   475 │   │   """Returns model state."""                                     │
+│   476 │   │   assert self.lightning_module is not None                       │
+│ ❱ 477 │   │   return self.lightning_module.state_dict()                      │
+│   478 │                                                                      │
+│   479 │   def save_checkpoint(                                               │
+│   480 │   │   self, checkpoint: dict[str, Any], filepath: _PATH, storage_opt │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/torch/nn/modules/module.py:2274 in state_dict                        │
+│                                                                              │
+│   2271 │   │   self._save_to_state_dict(destination, prefix, keep_vars)      │
+│   2272 │   │   for name, module in self._modules.items():                    │
+│   2273 │   │   │   if module is not None:                                    │
+│ ❱ 2274 │   │   │   │   module.state_dict(                                    │
+│   2275 │   │   │   │   │   destination=destination,                          │
+│   2276 │   │   │   │   │   prefix=prefix + name + ".",                       │
+│   2277 │   │   │   │   │   keep_vars=keep_vars,                              │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/torchmetrics/metric.py:940 in state_dict                             │
+│                                                                              │
+│    937 │   │   │   │   If set to ``True``, detaching will not be performed.  │
+│    938 │   │                                                                 │
+│    939 │   │   """                                                           │
+│ ❱  940 │   │   destination: dict[str, Union[torch.Tensor, list, Any]] = supe │
+│    941 │   │   │   destination=destination,  # type: ignore[arg-type]        │
+│    942 │   │   │   prefix=prefix,                                            │
+│    943 │   │   │   keep_vars=keep_vars,                                      │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/torch/nn/modules/module.py:2269 in state_dict                        │
+│                                                                              │
+│   2266 │   │   if hasattr(destination, "_metadata"):                         │
+│   2267 │   │   │   destination._metadata[prefix[:-1]] = local_metadata       │
+│   2268 │   │                                                                 │
+│ ❱ 2269 │   │   for hook in self._state_dict_pre_hooks.values():              │
+│   2270 │   │   │   hook(self, prefix, keep_vars)                             │
+│   2271 │   │   self._save_to_state_dict(destination, prefix, keep_vars)      │
+│   2272 │   │   for name, module in self._modules.items():                    │
+│                                                                              │
+│ /home/computah/.t3/projects/coptic-transcription/.venv/lib/python3.12/site-p │
+│ ackages/torch/utils/data/_utils/signal_handling.py:73 in handler             │
+│                                                                              │
+│   70 │   def handler(signum, frame) -> None:                                 │
+│   71 │   │   # This following call uses `waitid` with WNOHANG from C side. T │
+│   72 │   │   # Python can still get and update the process status successful │
+│ ❱ 73 │   │   _error_if_any_worker_fails()                                    │
+│   74 │   │   if previous_handler is not None:                                │
+│   75 │   │   │   if not callable(previous_handler):                          │
+│   76 │   │   │   │   raise AssertionError("previous_handler is not callable" │
+╰──────────────────────────────────────────────────────────────────────────────╯
+RuntimeError: DataLoader worker (pid 386908) is killed by signal: Terminated. 

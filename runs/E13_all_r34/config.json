@@ -1,0 +1,25 @@
+{
+ "name": "E13_all_r34",
+ "train": "data/mix/E13.lst",
+ "val": "/home/computah/.t3/projects/coptic-transcription/data/scam_a/val.lst",
+ "synth": [
+  "data/synth/v1"
+ ],
+ "synth_ratio": 0.3,
+ "init": null,
+ "backbone": "resnet34",
+ "no_pretrained": false,
+ "height": 64,
+ "max_width": 1200,
+ "hidden": 256,
+ "dropout": 0.2,
+ "batch": 24,
+ "steps": 20000,
+ "lr": 0.0005,
+ "wd": 0.01,
+ "warmup": 300,
+ "augment": 1.0,
+ "eval_every": 1000,
+ "workers": 14,
+ "seed": 0
+}

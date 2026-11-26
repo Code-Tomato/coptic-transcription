@@ -1,0 +1,56 @@
+{
+ "name": "A09_tie2_noskip",
+ "garbage": -2.0,
+ "line_breaks": true,
+ "full_text": true,
+ "skip_line": null,
+ "blank_penalty": 2.0,
+ "after_long_hold": {
+  "n": 220,
+  "median": 0.01,
+  "mean": 6.385,
+  "within_0_25": 69.5,
+  "within_0_5": 73.2,
+  "within_1": 74.5
+ },
+ "lessons": 75,
+ "words": {
+  "n": 2857,
+  "median": 0.01,
+  "mean": 3.738,
+  "within_0_25": 90.0,
+  "within_0_5": 92.0,
+  "within_1": 93.4
+ },
+ "line_starts": {
+  "n": 640,
+  "median": 0.01,
+  "mean": 19.32,
+  "within_0_25": 86.2,
+  "within_0_5": 88.4,
+  "within_1": 89.5
+ },
+ "median_of_lesson_medians": 0.0,
+ "worst": [
+  [
+   0.02,
+   "322_7837"
+  ],
+  [
+   0.16,
+   "2673_12730"
+  ],
+  [
+   0.39,
+   "699_8041"
+  ],
+  [
+   2.75,
+   "675_8028"
+  ],
+  [
+   14.19,
+   "1974_8020"
+  ]
+ ]
+}

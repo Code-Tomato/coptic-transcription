@@ -1,0 +1,23 @@
+{
+ "name": "E10a_E09_ft_gold",
+ "train": "/home/computah/.t3/projects/coptic-transcription/data/scam_a/train.lst",
+ "val": "/home/computah/.t3/projects/coptic-transcription/data/scam_a/val.lst",
+ "synth": [],
+ "synth_ratio": 0.0,
+ "init": "runs/E09_gold10x_pseudo3_pool12_synth30/best.pt",
+ "backbone": "resnet34",
+ "no_pretrained": false,
+ "height": 64,
+ "max_width": 1200,
+ "hidden": 256,
+ "dropout": 0.2,
+ "batch": 24,
+ "steps": 2000,
+ "lr": 0.0001,
+ "wd": 0.01,
+ "warmup": 100,
+ "augment": 1.0,
+ "eval_every": 200,
+ "workers": 5,
+ "seed": 0
+}

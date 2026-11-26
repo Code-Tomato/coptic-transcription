@@ -1,0 +1,20 @@
+{
+ "ckpt": "runs/E14_all_r50_h512/best.pt",
+ "alpha": 0.35,
+ "beta": 0.5,
+ "val": {
+  "cer": 7.45,
+  "cer_nospace": 7.35,
+  "ser": 45.45,
+  "greedy_cer": 7.81,
+  "lines": 242
+ },
+ "ood": {
+  "bible_cer": 20.08,
+  "pages": 35
+ },
+ "printed": {
+  "bible_cer": 18.94,
+  "pages": 14
+ }
+}

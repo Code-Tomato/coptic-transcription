@@ -1,0 +1,59 @@
+{
+ "name": "F00_base_test",
+ "model": null,
+ "ids": "liturgy/data/ft/test_ids.txt",
+ "garbage": -1.02,
+ "line_breaks": true,
+ "full_text": true,
+ "skip_line": -9.0,
+ "blank_penalty": 1.0,
+ "hold": "vowels",
+ "after_long_hold": {
+  "n": 63,
+  "median": 0.48,
+  "mean": 20.283,
+  "within_0_25": 46.0,
+  "within_0_5": 50.8,
+  "within_1": 54.0
+ },
+ "lessons": 16,
+ "words": {
+  "n": 428,
+  "median": 0.01,
+  "mean": 19.761,
+  "within_0_25": 73.1,
+  "within_0_5": 77.1,
+  "within_1": 79.4
+ },
+ "line_starts": {
+  "n": 83,
+  "median": 0.02,
+  "mean": 31.626,
+  "within_0_25": 69.9,
+  "within_0_5": 75.9,
+  "within_1": 75.9
+ },
+ "median_of_lesson_medians": 0.007,
+ "worst": [
+  [
+   0.015,
+   "1919_12687"
+  ],
+  [
+   0.02,
+   "1974_8020"
+  ],
+  [
+   0.02,
+   "322_7837"
+  ],
+  [
+   0.16,
+   "2673_12730"
+  ],
+  [
+   0.31,
+   "699_8041"
+  ]
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "ckpt": "runs/E17s1_E14_showthrough_seed1/best.pt",
+ "alpha": 0.35,
+ "beta": 0.5,
+ "val": {
+  "cer": 7.05,
+  "cer_nospace": 6.98,
+  "ser": 42.98,
+  "greedy_cer": 7.23,
+  "lines": 242
+ },
+ "test": {
+  "cer": 11.52,
+  "cer_nospace": 8.01,
+  "ser": 53.85,
+  "greedy_cer": 11.85,
+  "lines": 260
+ },
+ "ood": {
+  "bible_cer": 20.11,
+  "pages": 35,
+  "bible_cer_v2": 10.99
+ },
+ "printed": {
+  "bible_cer": 18.11,
+  "pages": 14
+ }
+}

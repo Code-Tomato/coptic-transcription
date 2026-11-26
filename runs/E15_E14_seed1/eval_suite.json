@@ -1,0 +1,21 @@
+{
+ "ckpt": "runs/E15_E14_seed1/best.pt",
+ "alpha": 0.35,
+ "beta": 0.5,
+ "val": {
+  "cer": 7.63,
+  "cer_nospace": 7.56,
+  "ser": 43.39,
+  "greedy_cer": 8.03,
+  "lines": 242
+ },
+ "ood": {
+  "bible_cer": 19.99,
+  "pages": 35,
+  "bible_cer_v2": 10.99
+ },
+ "printed": {
+  "bible_cer": 18.31,
+  "pages": 14
+ }
+}

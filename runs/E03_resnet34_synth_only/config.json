@@ -1,0 +1,25 @@
+{
+ "name": "E03_resnet34_synth_only",
+ "train": "data/scam_a/train.lst",
+ "val": "/home/computah/.t3/projects/coptic-transcription/data/scam_a/val.lst",
+ "synth": [
+  "data/synth/v1"
+ ],
+ "synth_ratio": 1.0,
+ "init": null,
+ "backbone": "resnet34",
+ "no_pretrained": false,
+ "height": 64,
+ "max_width": 1200,
+ "hidden": 256,
+ "dropout": 0.2,
+ "batch": 24,
+ "steps": 15000,
+ "lr": 0.0005,
+ "wd": 0.01,
+ "warmup": 300,
+ "augment": 1.0,
+ "eval_every": 1000,
+ "workers": 5,
+ "seed": 0
+}

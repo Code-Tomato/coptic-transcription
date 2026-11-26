@@ -1,0 +1,56 @@
+{
+ "name": "A07_bp5",
+ "garbage": -2.0,
+ "line_breaks": true,
+ "full_text": true,
+ "skip_line": -9.0,
+ "blank_penalty": 5.0,
+ "after_long_hold": {
+  "n": 220,
+  "median": 47.62,
+  "mean": 65.147,
+  "within_0_25": 0.9,
+  "within_0_5": 1.4,
+  "within_1": 2.7
+ },
+ "lessons": 75,
+ "words": {
+  "n": 2857,
+  "median": 27.3,
+  "mean": 55.595,
+  "within_0_25": 0.9,
+  "within_0_5": 1.5,
+  "within_1": 2.7
+ },
+ "line_starts": {
+  "n": 640,
+  "median": 30.79,
+  "mean": 69.835,
+  "within_0_25": 1.2,
+  "within_0_5": 2.0,
+  "within_1": 3.9
+ },
+ "median_of_lesson_medians": 19.07,
+ "worst": [
+  [
+   105.93,
+   "1339_12681"
+  ],
+  [
+   124.41,
+   "1915_12701"
+  ],
+  [
+   139.39,
+   "322_8021"
+  ],
+  [
+   160.08,
+   "1338_12688"
+  ],
+  [
+   203.65,
+   "1959_8027"
+  ]
+ ]
+}

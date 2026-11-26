@@ -1,0 +1,20 @@
+{
+ "ckpt": "models/recognizer.pt",
+ "alpha": 0.35,
+ "beta": 0.5,
+ "val": {
+  "cer": 7.96,
+  "cer_nospace": 7.89,
+  "ser": 45.87,
+  "greedy_cer": 8.36,
+  "lines": 242
+ },
+ "ood": {
+  "bible_cer": 20.21,
+  "pages": 35
+ },
+ "printed": {
+  "bible_cer": 18.47,
+  "pages": 14
+ }
+}
