@@ -39,7 +39,7 @@ and recordings that don't match the text (a different patriarch's name, a spoken
 
 <div class="how"><h2 style="margin-top:12px">How it works</h2><ol>
 <li><b>Text:</b> the hymn from tasbeha.org, where every Coptic word comes with its English-letter pronunciation (Greco-Bohairic).</li>
-<li><b>Sound:</b> Meta's MMS speech model (trained on 1,100+ languages), mixed 50/50 with a copy fine-tuned on 108 minutes of hand-timed Coptic chant, hears which letters are being sung every 20 ms.</li>
+<li><b>Sound:</b> Meta's MMS speech model (trained on 1,100+ languages), mixed 50/50 with <a href="https://huggingface.co/codetomato/coptic-chant-aligner">a copy fine-tuned on 108 minutes of hand-timed Coptic chant</a>, hears which letters are being sung every 20 ms.</li>
 <li><b>Alignment:</b> forced alignment places the known words in order on the recording, skipping audio that isn't in the text and lines that aren't sung, and letting a vowel be held through a melisma.</li>
 </ol></div>
 
@@ -50,5 +50,5 @@ evaluated on the <a href="https://huggingface.co/datasets/blowing-up-groundhogs/
 <p class="muted">Published results on the same test lines: VAN 7.50, CRNN 13.91, TrOCR-L 14.99. Details in <a href="https://github.com/Code-Tomato/coptic-transcription/blob/main/EXPERIMENTS.md">EXPERIMENTS.md</a>.</p>
 
 <footer>Code: <a href="https://github.com/Code-Tomato/coptic-transcription">github.com/Code-Tomato/coptic-transcription</a> (MIT license). Texts © their authors, from tasbeha.org; recordings © their owners, embedded from YouTube.
-Speech model: <a href="https://huggingface.co/MahmoudAshraf/mms-300m-1130-forced-aligner">MMS-300m forced aligner</a>.</footer>
+Speech models: <a href="https://huggingface.co/MahmoudAshraf/mms-300m-1130-forced-aligner">MMS-300m forced aligner</a> and its chant fine-tune <a href="https://huggingface.co/codetomato/coptic-chant-aligner">codetomato/coptic-chant-aligner</a>.</footer>
 </main></body></html>

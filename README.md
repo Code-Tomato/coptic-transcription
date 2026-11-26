@@ -7,6 +7,7 @@ Two tools for working with Coptic:
 1. **Hymn sing-along** ([`liturgy/`](liturgy/README.md)). Pairs a recording of a hymn with its text, so each word lights up as it is sung. The text shows in Coptic, English letters, English and Arabic.
    - **Demo:** **https://code-tomato.github.io/coptic-transcription/**
    - **Accuracy:** 93% of words start within 0.5 s of hand-checked timings across tasbeha.org's 75 timed recordings.
+   - **Model:** [`codetomato/coptic-chant-aligner`](https://huggingface.co/codetomato/coptic-chant-aligner) on Hugging Face. It's Meta's MMS forced aligner fine-tuned on 108 minutes of hand-timed Coptic chant, and it's used 50/50 with the base model. License: CC-BY-NC 4.0, the same as its base model.
 2. **Manuscript and print OCR** (the rest of this README). Reads Sahidic Coptic from photos or scans of whole pages.
    - **Accuracy:** 11.5% character error rate on SCAM-A test lines, and 7.0% on whole test pages.
    - **Models:** on Hugging Face at [`codetomato/coptic-ocr`](https://huggingface.co/codetomato/coptic-ocr).

@@ -56,8 +56,9 @@ def main():
     ap.add_argument("--hold", default="vowels", help="vowels | all | none: letters that may be held (melisma)")
     ap.add_argument("--skip-line", type=float, default=-9.0, help="per-letter score for leaving out a line not sung")
     ap.add_argument("--name")
-    ap.add_argument("--ft-model", default=str(ROOT / "models/F03_lr3e-5_freeze12_fp16"),
-                    help="acoustic model fine-tuned on hand-timed chant, mixed with the base model ('' to turn off)")
+    ap.add_argument("--ft-model", default="codetomato/coptic-chant-aligner",
+                    help="acoustic model fine-tuned on hand-timed chant (Hugging Face id or local folder), "
+                         "mixed with the base model ('' to turn off)")
     ap.add_argument("--mix", type=float, default=0.5, help="weight of the fine-tuned model's probabilities")
     a = ap.parse_args()
 
@@ -72,7 +73,7 @@ def main():
     al = Aligner()
     wav = load_audio(mp3)
     em = al.emissions(wav)
-    mixed = a.ft_model and a.mix > 0 and Path(a.ft_model).exists()
+    mixed = bool(a.ft_model) and a.mix > 0
     if mixed:  # p = mix * p_finetuned + (1 - mix) * p_base  (test set: better on held notes, same elsewhere)
         import numpy as np
         ef = Aligner(model=a.ft_model).emissions(wav)

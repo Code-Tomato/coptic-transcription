@@ -9,6 +9,15 @@ The goal is to take a recording of a Coptic hymn or liturgy part (from YouTube, 
 .venv/bin/python liturgy/scripts/align.py eval --garbage=-2 --name A02_g2_lines           # score against the answer key
 ```
 
+## Models
+
+| Model | What it is | Where |
+|---|---|---|
+| base | MMS-300m forced aligner (wav2vec2 CTC, 1,130 languages) | [MahmoudAshraf/mms-300m-1130-forced-aligner](https://huggingface.co/MahmoudAshraf/mms-300m-1130-forced-aligner) |
+| chant (F03) | the base fine-tuned on 108 min of tasbeha's hand-timed chant (round 3 below) | [codetomato/coptic-chant-aligner](https://huggingface.co/codetomato/coptic-chant-aligner) |
+
+`make_lesson.py` downloads both and averages their frame probabilities 50/50 (`--ft-model`, `--mix`). Both are CC-BY-NC 4.0.
+
 ## How it works
 
 1. **Text.** It comes from the [tasbeha.org hymn library](https://tasbeha.org/hymn_library/): about 2,000 texts. Every Coptic word is paired with its English-letter transliteration, and every line has English and Arabic.

@@ -20,7 +20,7 @@ from make_lesson import PLAYER, is_label  # noqa: E402
 ROOT = Path(__file__).resolve().parent.parent
 
 
-FT = ROOT / "models/F03_lr3e-5_freeze12_fp16"
+FT = ROOT / "models/F03_lr3e-5_freeze12_fp16"  # local copy of huggingface.co/codetomato/coptic-chant-aligner
 MIX = 0.5
 
 
