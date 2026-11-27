@@ -67,6 +67,58 @@ class Aligner:
             out.append(lp[f0:f0 + n])
         return np.concatenate(out)
 
+    @torch.no_grad()
+    def emissions_pauses(self, wav, max_sec=20.0, min_sec=2.0, pause_sec=0.25, rel_db=-30.0):
+        """Log-probs (T, V), with the recording cut at pauses and each piece run on its own (no context).
+
+        Long windows let one voice drown out another: next to a solo reader, the model outputs blanks for an
+        English choir it reads fine on its own. Cutting at pauses keeps each verse (one voice) separate.
+        """
+        hop = 320
+        T = len(wav) // hop
+        fr = wav[: T * hop].reshape(T, hop)
+        db = 10 * np.log10((fr ** 2).mean(1) + 1e-10)
+        quiet = db < np.percentile(db, 95) + rel_db
+        # centres of quiet runs at least pause_sec long are candidate cuts
+        cuts, i, minrun = [], 0, int(pause_sec / FRAME)
+        while i < T:
+            if quiet[i]:
+                j = i
+                while j < T and quiet[j]:
+                    j += 1
+                if j - i >= minrun:
+                    cuts.append((i + j) // 2)
+                i = j
+            else:
+                i += 1
+        bounds, start = [], 0
+        maxf, minf = int(max_sec / FRAME), int(min_sec / FRAME)
+        for c in cuts + [T]:
+            while c - start > maxf:  # no pause in time: cut at the quietest frame in the last third
+                lo = start + maxf * 2 // 3
+                k = lo + int(np.argmin(db[lo:start + maxf]))
+                bounds.append((start, k))
+                start = k
+            if c - start >= minf or c == T:
+                bounds.append((start, c))
+                start = c
+        out = []
+        dt = next(self.model.parameters()).dtype
+        for a, b in bounds:
+            if b <= a:
+                continue
+            x = torch.from_numpy(wav[a * hop: b * hop]).to(self.device)
+            if len(x) < 800:  # too short for the CNN: call it silence
+                lp = np.full((b - a, len(self.vocab)), -30.0, np.float32)
+                lp[:, self.blank] = 0.0
+            else:
+                x = (x - x.mean()) / (x.std() + 1e-7)
+                lp = self.model(x[None].to(dt)).logits[0].float().log_softmax(-1).cpu().numpy()
+            if len(lp) < b - a:
+                lp = np.concatenate([lp, np.repeat(lp[-1:], b - a - len(lp), 0)])
+            out.append(lp[: b - a])
+        return np.concatenate(out)
+
     def tokens(self, word):
         return [self.vocab[c] for c in norm(word) if c in self.vocab]
 
@@ -210,26 +262,57 @@ def gold_words(h):
     return out
 
 
-def emissions_cached(al, mp3):
-    c = ROOT / "cache/emissions" / al.tag / (Path(mp3).stem + ".npy")
+def combine_auto(al, ew, ep):
+    """Window emissions, except where they went silent on audio the pause-cut run hears (a drowned-out voice,
+    e.g. a choir answering a solo reader). Elsewhere identical to the window run."""
+    n = min(len(ew), len(ep))
+    ew, ep = ew[:n], ep[:n]
+    k = np.ones(150) / 150  # 3 s
+    mw = np.convolve(1 - np.exp(ew[:, al.blank]), k, "same")
+    mp = np.convolve(1 - np.exp(ep[:, al.blank]), k, "same")
+    use = (mw < 0.3 * mp) & (mp > 0.05)
+    return np.where(use[:, None], ep, ew)
+
+
+def emissions_for(al, wav, mode="auto"):
+    if mode == "window":
+        return al.emissions(wav)
+    if mode == "pauses":
+        return al.emissions_pauses(wav)
+    return combine_auto(al, al.emissions(wav), al.emissions_pauses(wav))
+
+
+def emissions_cached(al, mp3, mode="window"):
+    """mode 'window': 30 s windows with 4 s context; 'pauses': cut at pauses, each piece alone;
+    'both': the average of the two probabilities (keeps choir verses that windows lose, costs nothing elsewhere)."""
+    if mode == "auto":
+        ew, wav = emissions_cached(al, mp3, "window")
+        ep, _ = emissions_cached(al, mp3, "pauses")
+        return combine_auto(al, ew, ep), wav
+    if mode == "both":
+        ew, wav = emissions_cached(al, mp3, "window")
+        ep, _ = emissions_cached(al, mp3, "pauses")
+        n = min(len(ew), len(ep))
+        return np.logaddexp(ew[:n], ep[:n]) - np.log(2), wav
+    c = ROOT / "cache/emissions" / (al.tag + ("" if mode == "window" else "_pauses")) / (Path(mp3).stem + ".npy")
     if c.exists():
         return np.load(c).astype(np.float32), None
     wav = load_audio(mp3)
-    em = al.emissions(wav)
+    em = al.emissions(wav) if mode == "window" else al.emissions_pauses(wav)
     c.parent.mkdir(parents=True, exist_ok=True)
     np.save(c, em.astype(np.float16))
     return em, wav
 
 
 def run_lesson(al, js, mp3, garbage=None, line_breaks=True, full_text=False, skip_line=None, blank_penalty=0.0,
-               hold=None, em=None):
+               hold=None, em=None, mode="window"):
     h = json.loads(Path(js).read_text(encoding="utf-8"))
     # default: only the part of the text tasbeha marked as in this recording; --full-text: the whole text
     lines = [ln for ln in h["lines"] if ln["words"] and (full_text or ln.get("end"))]
     words = [w["translit"] for ln in lines for w in ln["words"]]
     keys = [(ln["idx"], wi) for ln in lines for wi in range(len(ln["words"]))]
     if em is None:
-        em, _ = emissions_cached(al, mp3)
+        em, _ = emissions_cached(al, mp3, mode)
     starts, n = [], 0
     for ln in lines:
         starts.append(n)
@@ -276,9 +359,12 @@ def main():
     ap.add_argument("--out")
     ap.add_argument("--model", help="fine-tuned model directory (default: base MMS aligner)")
     ap.add_argument("--ids", help="file with lesson ids to evaluate (one per line), e.g. a test split")
+    ap.add_argument("--emissions", default="window", choices=["window", "pauses", "both", "auto"])
+    ap.add_argument("--mix-model", help="also run this model and average 50/50 with the base (as make_lesson does)")
     a = ap.parse_args()
     al = Aligner(model=a.model)
     keep = set(Path(a.ids).read_text().split()) if a.ids else None
+    mixer = Aligner(model=a.mix_model) if a.mix_model else None
     if a.cmd == "one":
         r = run_lesson(al, a.args[0], a.args[1], a.garbage, not a.no_line_breaks, a.full_text, a.skip_line)
         Path(a.out or "align.json").write_text(json.dumps(r, ensure_ascii=False, indent=1))
@@ -293,7 +379,14 @@ def main():
         if not mp3.exists() or (keep is not None and js.stem not in keep):
             continue
         t = time.time()
-        r = run_lesson(al, js, mp3, a.garbage, not a.no_line_breaks, a.full_text, a.skip_line, a.blank_penalty, a.hold)
+        em = None
+        if a.mix_model:
+            eb, _ = emissions_cached(al, mp3, a.emissions)
+            ef, _ = emissions_cached(mixer, mp3, a.emissions)
+            n_ = min(len(eb), len(ef))
+            em = np.logaddexp(np.log(0.5) + ef[:n_], np.log(0.5) + eb[:n_])
+        r = run_lesson(al, js, mp3, a.garbage, not a.no_line_breaks, a.full_text, a.skip_line, a.blank_penalty, a.hold,
+                       em=em, mode=a.emissions)
         res.append(r)
         s = summary(r["word_err"])
         print(f"{r['id']:>12} {r['seconds']:6.1f}s {r['words']:4d}w  median {s['median']:.2f}s  "
@@ -301,7 +394,7 @@ def main():
     allw = [e for r in res for e in r["word_err"]]
     alll = [e for r in res for e in r["line_err"]]
     per = sorted((summary(r["word_err"])["median"], r["id"]) for r in res if r["word_err"])
-    report = dict(name=a.name, model=a.model, ids=a.ids, garbage=a.garbage, line_breaks=not a.no_line_breaks, full_text=a.full_text,
+    report = dict(name=a.name, model=a.model, ids=a.ids, emissions=a.emissions, mix_model=a.mix_model, garbage=a.garbage, line_breaks=not a.no_line_breaks, full_text=a.full_text,
                   skip_line=a.skip_line, blank_penalty=a.blank_penalty, hold=a.hold,
                   after_long_hold=summary([e for r in res for e in r["after_hold_err"]]), lessons=len(res), words=summary(allw), line_starts=summary(alll),
                   median_of_lesson_medians=round(float(np.median([m for m, _ in per])), 3),

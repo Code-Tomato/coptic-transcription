@@ -1,0 +1,61 @@
+{
+ "name": "P02_mix_pauses",
+ "model": null,
+ "ids": null,
+ "emissions": "pauses",
+ "mix_model": "codetomato/coptic-chant-aligner",
+ "garbage": -1.02,
+ "line_breaks": true,
+ "full_text": true,
+ "skip_line": -9.0,
+ "blank_penalty": 1.0,
+ "hold": "vowels",
+ "after_long_hold": {
+  "n": 220,
+  "median": 0.02,
+  "mean": 5.489,
+  "within_0_25": 75.5,
+  "within_0_5": 78.2,
+  "within_1": 79.5
+ },
+ "lessons": 75,
+ "words": {
+  "n": 2857,
+  "median": 0.01,
+  "mean": 3.794,
+  "within_0_25": 89.3,
+  "within_0_5": 91.6,
+  "within_1": 93.4
+ },
+ "line_starts": {
+  "n": 640,
+  "median": 0.02,
+  "mean": 19.245,
+  "within_0_25": 85.2,
+  "within_0_5": 87.7,
+  "within_1": 90.0
+ },
+ "median_of_lesson_medians": 0.01,
+ "worst": [
+  [
+   0.04,
+   "322_7837"
+  ],
+  [
+   0.05,
+   "1919_12687"
+  ],
+  [
+   0.06,
+   "1974_8020"
+  ],
+  [
+   0.14,
+   "2673_12730"
+  ],
+  [
+   0.18,
+   "699_8041"
+  ]
+ ]
+}

@@ -122,6 +122,38 @@ Restricting both recordings to the sung span, the best weighting (sound + 0.3 pi
 - a tune library with one timed reference per tune, used only when the DTW match is confident;
 - a soft prior on relative word durations from a matching reference.
 
+### Round 5: a voice drowned out by another (Coptic Chanter's reader-and-choir case)
+
+Coptic Chanter (Refaat Yakoub) reported a hard case: the Commemoration of the Saints in English from St. Antony's Monastery, where a solo reader and a choir alternate verses.
+- **Reader verses** aligned well (median word confidence −3.5).
+- **Choir verses** didn't: confidence −8.1, and the words landed almost anywhere.
+- **Coptic recording of the same hymn,** which they hand-timed (1,114 words): fine, choir verses included, at 83% / 99.6% of words within 0.5 s / 1 s.
+
+**Cause.** The model hears the English choir well when a verse is processed on its own: verse 2 decodes as "imcasiiranabiihaooho…", which is "intercede on our behalf, O holy…".
+
+| Audio around a choir verse | Letters decoded in a 15 s choir verse (2 verses) |
+|---|---|
+| verse alone | 65, 78 |
+| ± 2 s context | 49, 36 |
+| 5 s or more of context (our 30 s windows) | 0, 0 |
+
+With the solo reader in view, the model treats the choir as background and outputs blanks.
+
+**Fix** (`--emissions`):
+- `pauses` cuts the recording at pauses (≥ 0.25 s quieter than −30 dB under the 95th-percentile level), into pieces of at most 20 s, and runs each piece alone.
+- `auto` is the default. It uses the 30 s windows, except where their letter probability (3 s average) falls below 0.3× that of the pause-cut run (and the pause-cut run hears something). So it changes only stretches where a voice was drowned out.
+
+| | 75 tasbeha recordings ≤0.5 s / ≤1 s | held-out hard hymns ≤0.5 s | Coptic Commemoration vs volunteer | English choir confidence | English choir words < −6 | Spread of "that … sins" across choir verses |
+|---|---|---|---|---|---|---|
+| window (before) | 92.8 / 94.2 | 77.8 | 83.1 / 99.6 | −8.0 | 77% | 0.22 s |
+| pauses | 91.6 / 93.4 | 74.3 | 83.0 / 99.9 | −5.0 | 37% | 0.02 s |
+| average of both | 92.1 / 93.7 | 75.0 | 82.9 / 99.9 | −5.4 | – | 0.02 s |
+| **auto (default)** | **92.8 / 94.2** | **77.8** | **83.3 / 99.9** | **−5.3** | 41% | 0.04 s |
+
+All runs use the 50/50 base + chant mix. The spread is how much the time from "that" to "sins" varies across choir verses. Since it's the same tune every verse, a correct alignment keeps it small. Reader verses have 0.02 s.
+
+There's no hand-timed English yet, so the English gains are indirect evidence: confidence, consistency, and agreement with the closing formula of Coptic Chanter's reader-verse template, which goes from 79% to 88% within 0.5 s. `commemoration.py` reproduces all of this. The data was shared by Coptic Chanter and isn't in git.
+
 Comparison pages for checking by ear: `compare_page.py <lesson ids>` writes `lessons/compare_*.html`.
 
 Skipping lines doesn't change the score. It's on by default anyway, because without it an unsung line, such as the Creed's opening deacon call, gets squeezed into the first seconds and highlighted wrongly.

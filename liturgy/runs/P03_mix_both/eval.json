@@ -1,0 +1,61 @@
+{
+ "name": "P03_mix_both",
+ "model": null,
+ "ids": null,
+ "emissions": "both",
+ "mix_model": "codetomato/coptic-chant-aligner",
+ "garbage": -1.02,
+ "line_breaks": true,
+ "full_text": true,
+ "skip_line": -9.0,
+ "blank_penalty": 1.0,
+ "hold": "vowels",
+ "after_long_hold": {
+  "n": 220,
+  "median": 0.02,
+  "mean": 5.267,
+  "within_0_25": 75.9,
+  "within_0_5": 79.1,
+  "within_1": 80.5
+ },
+ "lessons": 75,
+ "words": {
+  "n": 2857,
+  "median": 0.01,
+  "mean": 3.762,
+  "within_0_25": 89.9,
+  "within_0_5": 92.1,
+  "within_1": 93.7
+ },
+ "line_starts": {
+  "n": 640,
+  "median": 0.01,
+  "mean": 19.092,
+  "within_0_25": 87.0,
+  "within_0_5": 89.5,
+  "within_1": 90.8
+ },
+ "median_of_lesson_medians": 0.01,
+ "worst": [
+  [
+   0.04,
+   "1909_12698"
+  ],
+  [
+   0.04,
+   "1974_8020"
+  ],
+  [
+   0.05,
+   "1919_12687"
+  ],
+  [
+   0.11,
+   "699_8041"
+  ],
+  [
+   0.14,
+   "2673_12730"
+  ]
+ ]
+}

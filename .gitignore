@@ -24,3 +24,4 @@ runs/**/*.png
 runs/**/*.jpg
 runs/**/*.safetensors
 runs/**/*.pid
+liturgy/runs/commemoration/

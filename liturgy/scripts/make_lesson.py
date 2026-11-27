@@ -17,7 +17,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).parent))
-from align import SR, Aligner, load_audio  # noqa: E402
+from align import SR, Aligner, emissions_for, load_audio  # noqa: E402
 
 ROOT = Path(__file__).resolve().parent.parent
 PLAYER = ROOT / "player/player.html"
@@ -60,6 +60,8 @@ def main():
                     help="acoustic model fine-tuned on hand-timed chant (Hugging Face id or local folder), "
                          "mixed with the base model ('' to turn off)")
     ap.add_argument("--mix", type=float, default=0.5, help="weight of the fine-tuned model's probabilities")
+    ap.add_argument("--emissions", default="auto", choices=["auto", "window", "pauses"],
+                    help="auto: 30 s windows, falling back to pause-cut pieces where a voice gets drowned out")
     a = ap.parse_args()
 
     tp = Path(a.text) if a.text.endswith(".json") else ROOT / f"data/tasbeha/texts/{a.text}.json"
@@ -72,11 +74,11 @@ def main():
 
     al = Aligner()
     wav = load_audio(mp3)
-    em = al.emissions(wav)
+    em = emissions_for(al, wav, a.emissions)
     mixed = bool(a.ft_model) and a.mix > 0
     if mixed:  # p = mix * p_finetuned + (1 - mix) * p_base  (test set: better on held notes, same elsewhere)
         import numpy as np
-        ef = Aligner(model=a.ft_model).emissions(wav)
+        ef = emissions_for(Aligner(model=a.ft_model), wav, a.emissions)
         n = min(len(em), len(ef))
         em = np.logaddexp(np.log(a.mix) + ef[:n], np.log(1 - a.mix) + em[:n]) if a.mix < 1 else ef
     sung = [ln for ln in lines if not is_label(ln)]
